@@ -1,0 +1,17 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Holayn/boilerplate.git",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "yarn --cwd packages/server start"
+  },
+  "devDependencies": {
+    "lerna": "^3.18.1"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ]
+}
