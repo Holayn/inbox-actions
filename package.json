@@ -5,6 +5,7 @@
   "repository": "https://github.com/Holayn/boilerplate.git",
   "license": "MIT",
   "scripts": {
+    "start": "yarn start:server",
     "start:server": "yarn --cwd packages/server start"
   },
   "devDependencies": {
