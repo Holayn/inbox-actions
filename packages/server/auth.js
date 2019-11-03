@@ -12,9 +12,9 @@ const TOKEN_PATH = 'token.json';
 function executeAPI(cb) {
   // Load client secrets from a local file.
   fs.readFile('credentials.json', (err, content) => {
-  if (err) return console.log('Error loading client secret file:', err);
-  // Authorize a client with credentials, then call the Gmail API.
-  authorize(JSON.parse(content), cb);
+    if (err) return console.log('Error loading client secret file:', err);
+    // Authorize a client with credentials, then call the Gmail API.
+    return authorize(JSON.parse(content), cb);
   });
 }
 
@@ -33,7 +33,7 @@ function authorize(credentials, callback) {
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
     oAuth2Client.setCredentials(JSON.parse(token));
-    callback(oAuth2Client);
+    return callback(oAuth2Client);
   });
 }
 
